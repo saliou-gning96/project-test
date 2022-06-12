@@ -26,4 +26,12 @@ final class ProductFavoriteManager
     {
         return $this->productFavoriteInterface->add($productFavorite, true);
     }
+
+    /**
+     * @param ProductFavorite $productFavorite
+     */
+    public function remove($productFavorite): void
+    {
+        $this->productFavoriteInterface->remove($productFavorite, true);
+    }
 }
