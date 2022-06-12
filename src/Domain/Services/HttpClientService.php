@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-final class HttpClientService
+class HttpClientService
 {
     private HttpClientInterface $client;
 

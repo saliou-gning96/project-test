@@ -5,7 +5,7 @@ namespace App\Domain\Manager;
 use App\Domain\Interfaces\ProductFavoriteInterface;
 use App\Infrastructure\Entity\ProductFavorite;
 
-final class ProductFavoriteManager
+class ProductFavoriteManager
 {
     private ProductFavoriteInterface $productFavoriteInterface;
 

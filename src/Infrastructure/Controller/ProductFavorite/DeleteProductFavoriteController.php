@@ -7,7 +7,7 @@ use App\Infrastructure\Entity\ProductFavorite;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class RemoveProductFavoriteController extends AbstractController
+class DeleteProductFavoriteController extends AbstractController
 {
     private DeleteProductFavorite $deleteProductFavorite;
 
@@ -18,7 +18,7 @@ class RemoveProductFavoriteController extends AbstractController
 
     #[Rest\Delete(path: 'api/delete/{ean}', name: 'app_delete_product_favorite')]
     #[Rest\View]
-    public function index(ProductFavorite $productFavorite)
+    public function delete(ProductFavorite $productFavorite)
     {
         return $this->deleteProductFavorite->remove($productFavorite);
     }

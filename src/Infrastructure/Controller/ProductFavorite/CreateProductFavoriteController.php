@@ -20,7 +20,7 @@ class CreateProductFavoriteController extends AbstractController
     #[Rest\Post(path: 'api/save', name: 'app_create_product_favorite')]
     #[Rest\View]
     #[ParamConverter('productFavorite', converter: 'fos_rest.request_body')]
-    public function index(ProductFavorite $productFavorite)
+    public function create(ProductFavorite $productFavorite)
     {
         return $this->createProductFavorite->create($productFavorite, $this->getUser());
     }

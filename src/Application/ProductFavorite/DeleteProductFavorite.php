@@ -6,7 +6,7 @@ use App\Domain\Services\HttpClientService;
 use App\Domain\Manager\ProductFavoriteManager;
 use App\Infrastructure\Entity\ProductFavorite;
 
-final class DeleteProductFavorite
+class DeleteProductFavorite
 {
     private ProductFavoriteManager $productFavoriteManager;
 
