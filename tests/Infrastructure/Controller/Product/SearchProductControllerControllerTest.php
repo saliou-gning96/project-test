@@ -3,11 +3,7 @@
 namespace Tests\Application\Controller\ProductFavorite;
 
 use App\Application\Product\SearchProduct;
-use App\Application\ProductFavorite\CreateProductFavorite;
 use App\Infrastructure\Controller\Product\SearchProductController;
-use App\Infrastructure\Controller\ProductFavorite\CreateProductFavoriteController;
-use App\Infrastructure\Entity\ProductFavorite;
-use App\Infrastructure\Entity\User;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -34,15 +30,13 @@ class SearchProductControllerControllerTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->request->method('get')->willReturn('name');
+        $this->request->method('get')->willReturn(null);
     }
 
     public function testSearch()
     {
-        /*
-        $searchProductController = new SearchProductController($this->request);
+        $searchProductController = new SearchProductController($this->searchProduct);
         $response = $searchProductController->search($this->request);
         $this->assertEquals('Woolworths', $response['brands']);
-        */
     }
 }
