@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Application\ProductFavorite;
+namespace Tests\Application\Controller\ProductFavorite;
 
 use App\Application\ProductFavorite\CreateProductFavorite;
 use App\Infrastructure\Controller\ProductFavorite\CreateProductFavoriteController;

@@ -23,7 +23,7 @@ class HttpClientService
     public function checkProductByCode(string $code)
     {
         $params = ['code' => $code, 'fields' => 'code,product_name'];
-        $url = 'https://world.openfoodfacts.org/api/v2/search?' . http_build_query($params);
+        $url = 'https://fr.openfoodfacts.org/api/v2/search?' . http_build_query($params);
 
         $response = $this->client->request(
             'GET',
@@ -41,5 +41,20 @@ class HttpClientService
         }
 
         return true;
+    }
+
+    public function searchProduit($params) {
+        $url = 'https://fr.openfoodfacts.org/cgi/search.pl?' . http_build_query($params);
+
+        $response = $this->client->request(
+            'GET',
+            $url
+        );
+
+        if ($response->getStatusCode() !== 200) {
+            throw new BadRequestException('Le serveur openfoodfacts réponds pas.');
+        }
+
+        return $response->toArray();
     }
 }
