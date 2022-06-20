@@ -7,12 +7,9 @@ use App\Infrastructure\Entity\ProductFavorite;
 
 class ProductFavoriteManager
 {
-    private ProductFavoriteInterface $productFavoriteInterface;
 
-    public function __construct(ProductFavoriteInterface $productFavoriteInterface)
-    {
-        $this->productFavoriteInterface = $productFavoriteInterface;
-    }
+    public function __construct(private ProductFavoriteInterface $productFavoriteInterface)
+    {}
 
     public function getAll()
     {

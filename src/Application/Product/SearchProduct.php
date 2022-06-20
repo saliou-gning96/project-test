@@ -7,14 +7,11 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class SearchProduct
 {
-    private HttpClientService $httpClientService;
 
     public function __construct(
-        HttpClientService $httpClientService
+        private HttpClientService $httpClientService
     )
-    {
-        $this->httpClientService = $httpClientService;
-    }
+    {}
 
     public function search(?string $name, ?string $ean, ?string $marque, ?int $page = 1)
     {

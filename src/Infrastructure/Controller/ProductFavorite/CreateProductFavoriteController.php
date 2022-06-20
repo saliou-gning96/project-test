@@ -10,12 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CreateProductFavoriteController extends AbstractController
 {
-    private CreateProductFavorite $createProductFavorite;
-
-    public function __construct(CreateProductFavorite $createProductFavorite)
-    {
-        $this->createProductFavorite = $createProductFavorite;
-    }
+    public function __construct(private CreateProductFavorite $createProductFavorite)
+    {}
 
     #[Rest\Post(path: 'api/save', name: 'app_create_product_favorite')]
     #[Rest\View]

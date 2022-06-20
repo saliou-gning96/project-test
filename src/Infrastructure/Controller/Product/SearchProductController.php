@@ -9,12 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class SearchProductController extends AbstractController
 {
-    private SearchProduct $searchProduct;
 
-    public function __construct(SearchProduct $searchProduct)
-    {
-        $this->searchProduct = $searchProduct;
-    }
+    public function __construct(private SearchProduct $searchProduct)
+    {}
 
     #[Rest\Get(path: 'api/search', name: 'app_search_product')]
     #[Rest\View]

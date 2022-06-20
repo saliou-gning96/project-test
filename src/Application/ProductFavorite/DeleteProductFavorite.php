@@ -8,14 +8,10 @@ use App\Infrastructure\Entity\ProductFavorite;
 
 class DeleteProductFavorite
 {
-    private ProductFavoriteManager $productFavoriteManager;
-
     public function __construct(
-        ProductFavoriteManager $productFavoriteManager
+        private ProductFavoriteManager $productFavoriteManager
     )
-    {
-        $this->productFavoriteManager = $productFavoriteManager;
-    }
+    {}
 
     public function remove($productFavorite): void
     {

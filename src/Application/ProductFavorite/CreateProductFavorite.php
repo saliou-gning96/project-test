@@ -8,17 +8,12 @@ use App\Infrastructure\Entity\ProductFavorite;
 
 class CreateProductFavorite
 {
-    private ProductFavoriteManager $productFavoriteManager;
-    private HttpClientService $httpClientService;
 
     public function __construct(
-        ProductFavoriteManager $productFavoriteManager,
-        HttpClientService $httpClientService
+        private ProductFavoriteManager $productFavoriteManager,
+        private HttpClientService $httpClientService
     )
-    {
-        $this->productFavoriteManager = $productFavoriteManager;
-        $this->httpClientService = $httpClientService;
-    }
+    {}
 
     public function create($productFavorite, $user): ProductFavorite
     {

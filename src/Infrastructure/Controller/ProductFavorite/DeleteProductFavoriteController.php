@@ -9,12 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DeleteProductFavoriteController extends AbstractController
 {
-    private DeleteProductFavorite $deleteProductFavorite;
 
-    public function __construct(DeleteProductFavorite $deleteProductFavorite)
-    {
-        $this->deleteProductFavorite = $deleteProductFavorite;
-    }
+    public function __construct(private DeleteProductFavorite $deleteProductFavorite)
+    {}
 
     #[Rest\Delete(path: 'api/delete/{ean}', name: 'app_delete_product_favorite')]
     #[Rest\View]
