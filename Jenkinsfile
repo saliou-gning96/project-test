@@ -5,7 +5,7 @@ pipeline {
       agent any
       steps {
         sh 'docker-compose up -d'
-        sh 'docker exec app_name composer install'
+        sh 'docker exec www_docker_symfony composer install'
       }
     }    
     stage('PHP CS Fixer') {
@@ -15,12 +15,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'docker exec app_name php ./bin/phpunit --coverage-clover=\'reports/coverage/coverage.xml\' --coverage-html=\'reports/coverage\''
-      }
-    }
-    stage('Coverage') {
-      steps {
-        step([$class: 'CloverPublisher'undefined cloverReportDir: '/reports/coverage'undefined cloverReportFileName: 'coverage.xml'])
+        sh 'docker exec app_name php ./bin/phpunit '
       }
     }
   }  
